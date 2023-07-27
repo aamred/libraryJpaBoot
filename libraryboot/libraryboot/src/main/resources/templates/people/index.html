@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.og">
+<head>
+<meta charset="UTF-8">
+<title>Customers</title>
+</head>
+<body>
+	<p>CUSTOMERS</p>
+	<div th:each="person:${people}">
+		<a th:href="@{/people/{id}(id=${person.getId()})}" 
+		th:text="${person.getName() +', '+person.getYearOfBirth()} ">user</a>
+	</div>
+	<br/>
+	<hr/>
+	
+	<a th:href="@{/people/new}">Create new person</a>
+	<br/>
+	<hr/>
+	
+	<a th:href="@{/books}">------BOOKS------</a>
+</body>
+</html>
